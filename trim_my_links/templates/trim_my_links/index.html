@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  {% load static %}
+
+  <title>Trim My Links!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'trim_my_links/styles/bootstrap.min.css' %}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{% static 'trim_my_links/scripts/main.js' %}" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="jumbotron text-center">
+	  <h1>Trim My Links!</h1>
+	  <p>Just put your looooooonnng link in the box and get back a shiny new tiny link.</p>
+	</div>
+	  
+	<div class="container">
+		<form name="frm1">
+		  <div class="form-group">
+		    <label for="big_link">Your Big Link:</label>
+		    <input class="form-control" id="big_link">
+		  </div>
+		  <button type="button" class="btn btn-default" 
+		  onclick="submit_trim_link(document.getElementById('big_link').value);">Trim my link</button>
+		</form>
+	</div>
+	
+</body>
+</html>

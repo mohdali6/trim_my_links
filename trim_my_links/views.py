@@ -5,15 +5,19 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 
+import json
+
 # Create your views here.
 
 @ensure_csrf_cookie
 def index(request):
 	request.session.set_test_cookie()
-	return HttpResponse("Let's Begin")
+	return render(request, 'trim_my_links/index.html')
+
 
 def trim_link(request):
 	if request.method == 'POST':
+		print json.loads(request.body.decode('utf-8'))
 		# ToDo
 		return JsonResponse({'message': 'POST SERVED'})
 	else:
