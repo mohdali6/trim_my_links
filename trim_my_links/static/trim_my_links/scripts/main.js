@@ -34,9 +34,9 @@ function submit_trim_link(big_link) {
             "big_link": big_link
         };
 
-    $.post("trim_link/",
+    $.post("trim-link/",
         JSON.stringify(post_data),
-        function(data, status){
-            console.log(data);
+        function(data, status, xhr){
+// toDo
     });
 }
